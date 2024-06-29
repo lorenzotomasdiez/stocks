@@ -1,0 +1,9 @@
+{
+  "hasSrc": false,
+  "packages": [],
+  "preferredPackageManager": "pnpm",
+  "t3": false,
+  "alias": "@",
+  "analytics": true,
+  "rootPath": ""
+}
