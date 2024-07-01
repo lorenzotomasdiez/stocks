@@ -20,6 +20,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Currency {
+  USD
+  EUR
+  GBP
+  JPY
+  CNY
+  INR
+  AUD
+  CAD
+  CHF
+  RUB
+  ARS
+}
 
 model Account {
   id                 String  @id @default(cuid())
@@ -67,3 +80,11 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Bond {
+  id            Int       @id @default(autoincrement())
+  name          String
+  isin          String    @unique
+  currency      Currency  @default(USD)
+}
+

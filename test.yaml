@@ -1,0 +1,60 @@
+framework: crewai
+topic: "# Database design\nQuantum es una AGI que se encarga de asesorar clientes.\
+  \ Quantum esta buscando desarrollar un producto para solucionar un problema de carga\
+  \ de datos y creacion de reportes. \n\nTrabajan con unos 20 clientes y estos clientes\
+  \ envian diario, pdfs con la compras de bonos y titulos de la bolsa que van comprando,\
+  \ entonces quantum los va cargando y lleva un registro de todo esto, osea, de la\
+  \ cantidad de titulos, la variacion de precio, dinero liquido una vez que un titulo\
+  \ u bono se vence, etc.\nLa idea principal es informar al cliente diaria/semanal\
+  \ y mensualmente la posicion contable de cada cliente.\n\nEsta compra de bonos o\
+  \ titulos, no la hace Quantum, la hacen los clientes con contrapartes(brokers) que\
+  \ puede o no tener un convenio con Quantum. Este convenio no significa nada hoy\
+  \ en dia.\n\nEl registro de `operaciones` lo hace Quantum manualmente en un excel,\
+  \ y tambien tienen un excel donde van guardando los precios de cada `especie`(simbolo\
+  \ de titulo o bono ) que los obtienen de bloomberg.\n\nEntonces, la solucion que\
+  \ desean como MVP, es... \nPoder registrar estas operaciones de una forma mas sencilla,\
+  \ que los precios de bloomberg se actualicen de forma automatica, y la creacion\
+  \ de reportes con la opcion de descarga en pdf.\n\n\n"
+roles:
+  data_ingestion_specialist:
+    backstory: Experienced in handling various data formats and automating data entry
+      tasks, reducing manual input and improving accuracy.
+    goal: Automate the ingestion of bond purchasing data and price updates from clients.
+    role: Data Ingestion Specialist
+    tasks:
+      automate_data_entry:
+        description: Develop a system to automate the entry of bond purchasing information
+          and updates bond prices from Bloomberg to the database.
+        expected_output: An automation system that can parse PDFs and CSVs for bond
+          purchases and automatically fetch and update bond prices from Bloomberg.
+    tools:
+    - ''
+  database_developer:
+    backstory: Skilled in database design and development, with experience in financial
+      data management.
+    goal: Design and implement a database schema that supports the efficient storage
+      and retrieval of bond purchasing data and price information.
+    role: Database Developer
+    tasks:
+      design_database_schema:
+        description: Create a relational database schema to store bond purchasing
+          details, prices, and client information.
+        expected_output: A detailed database schema, including tables, fields, and
+          relationships, ready for implementation.
+    tools:
+    - ''
+  reporting_engineer:
+    backstory: Expert in report generation and data visualization, focusing on delivering
+      client-ready financial reports.
+    goal: Develop a reporting tool that can generate daily, weekly, and monthly financial
+      position reports for each client, with PDF download capability.
+    role: Reporting Engineer
+    tasks:
+      develop_reporting_tool:
+        description: Build a tool that dynamically generates financial position reports
+          from the database and allows users to download as PDF.
+        expected_output: A reporting tool with an interface for selecting report parameters
+          (client, time frame) and outputs PDF reports.
+    tools:
+    - ''
+dependencies: []
