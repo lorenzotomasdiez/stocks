@@ -19,9 +19,9 @@ export default function MenuOption({
     <Link href={href}>
       <div
         className={cn(
-          "p-3 border rounded-lg bg-neutral-200 aspect-square flex flex-col justify-center items-center duration-300 transition-all",
-          isSelected && "bg-neutral-500 text-white",
-          "hover:bg-neutral-400/40",
+          "p-3 border rounded-lg bg-neutral-200 aspect-square flex flex-col justify-center items-center duration-300 transition-all dark:bg-neutral-600",
+          isSelected && "bg-neutral-500 text-white dark:bg-neutral-400",
+          "hover:bg-neutral-400/40 dark:hover:bg-neutral-400",
         )}
       >
         <div className="relative">
